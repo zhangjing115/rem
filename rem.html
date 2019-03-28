@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+           <style type="text/css">
+               body{
+               font-size: 16px;
+               }
+               input{
+                display: inline-block;
+               	width: 140px;
+	           height: 20px;    
+               font-size: 18px;
+               }
+    </style>
+	</head>
+    
+	<body>
+		<div> UI设计尺寸宽度  <input type="number"placeholder="输入宽度单位px" id="Upush" /></div>
+		<div> 开发宽度750px下:1rem =  <input type="number"placeholder="输入px" id="rem"/></div>
+		
+		<div> 所计算标注尺寸： <input type="number"placeholder="输入px" id="note"/></div>
+		<button onclick='Btn()'>计算</button>
+		<div id="int"></div>
+	</body>
+	<script type="text/javascript">
+		
+		function Btn(){
+			var Upush = document.getElementById('Upush').value
+			var rem = document.getElementById('rem').value
+			var note = document.getElementById('note').value
+			var setval = ((750/Upush)*note)/rem;
+			document.getElementById('int').innerHTML = '所计算的rem:    <br>'+setval
+			console.log(setval)
+		}
+	</script>
+</html>
